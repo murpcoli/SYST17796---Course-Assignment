@@ -1,4 +1,10 @@
 /**
+ * SYST17796 Deliverable 3
+ * Blackjack
+ * August 12, 2022
+ */
+
+/**
  * SYST 17796 Project Base code.
  * Students can modify and extend to implement their game.
  * Add your name as an author and the date!
@@ -10,40 +16,74 @@ package ca.sheridancollege.project;
  *
  * @author dancye
  * @author Paul Bonenfant Jan 2020
+ * @modifier Colin Murphy
+ * @modifier Gagandeep Kooner
  */
-public abstract class Player {
+public class Player{
 
-    private String name; //the unique name for this player
+    private int id;
+    private int currentMoney;
+    private int bet;
+    private boolean hasBet = false;
+    private boolean isAllIn = false;
+    private Hand hand = new Hand();
+    
 
-    /**
-     * A constructor that allows you to set the player's unique ID
-     *
-     * @param name the unique ID to assign to this player.
-     */
-    public Player(String name) {
-        this.name = name;
+    public Player(int id, int startingMoney){
+        this.id = id;
+        this.currentMoney = startingMoney;
     }
 
-    /**
-     * @return the player name
-     */
-    public String getName() {
-        return name;
+    public int getId() {
+        return id;
     }
 
-    /**
-     * Ensure that the playerID is unique
-     *
-     * @param name the player name to set
-     */
-    public void setName(String name) {
-        this.name = name;
+    public int getCurrentMoney() {
+        return currentMoney;
     }
 
-    /**
-     * The method to be overridden when you subclass the Player class with your specific type of Player and filled in
-     * with logic to play your game.
-     */
-    public abstract void play();
+    public void setCurrentMoney(int currentMoney){
+        this.currentMoney = currentMoney;
+    }
+    
+    public int getBet() {
+        return bet;
+    }
+
+    public void setBet(int bet) {
+        this.bet = bet;
+    }
+
+    public boolean getHasBet(){
+        return this.hasBet;
+    }
+
+    public void setHasBet(boolean hasBet){
+        this.hasBet = hasBet;
+    }
+
+    public boolean getIsAllIn() {
+        return isAllIn;
+    }
+
+    public void setIsAllIn(boolean isAllIn) {
+        this.isAllIn = isAllIn;
+    }
+
+    public Hand getHand(){
+        return this.hand;
+    }
+
+    public void setHand(Hand hand){
+        this.hand = hand;
+    }
+
+    @Override
+    public String toString(){
+        return "----------\nPlayer " + this.id + "\nMoney: " + this.currentMoney + "\nHand: " + this.hand.toString() + "\n----------\n";
+    }
 
 }
+    
+
+
