@@ -68,11 +68,11 @@ public class BlackjackTest {
     public void testCreatePlayersBoundary(){
         System.out.println("Testing createPlayersBoundary");
         ArrayList<Player> players = new ArrayList<Player>();
-        System.out.println("Testing numPlayers = 0, startingMoney = 0");
-        int numPlayers = 0;
-        int startingMoney = 0;
+        System.out.println("Testing numPlayers = 1, startingMoney = 1");
+        int numPlayers = 1;
+        int startingMoney = 1;
         boolean result = Blackjack.createPlayers(players, numPlayers, startingMoney);
-        boolean expResult = false;
+        boolean expResult = true;
         assertEquals(expResult, result);
     }
 
@@ -106,7 +106,7 @@ public class BlackjackTest {
     
     @Test
     public void testCheckForLosersBoundary() {
-        System.out.println("Testing checkForLosersBad");
+        System.out.println("Testing checkForLosersBoundary");
         ArrayList<Player> players = new ArrayList<Player>();
         System.out.println("Testing Player 1 = 100, Player 2 = 100, Player 3 = 0, Player 4 = 100");
         players.add(new Player(1, 100));

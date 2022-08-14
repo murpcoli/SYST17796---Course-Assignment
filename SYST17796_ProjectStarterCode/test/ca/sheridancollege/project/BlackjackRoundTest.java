@@ -152,8 +152,8 @@ public class BlackjackRoundTest {
     }
 
     @Test
-    public void testDetermineRoundWinnerGood() {
-        System.out.println("Testing determineRoundWinnerGood");
+    public void testDetermineRoundWinnerBoundary() {
+        System.out.println("Testing determineRoundWinnerBoundary");
         ArrayList<Player> players = new ArrayList<Player>();
         System.out.println("Testing Player 1 Score = 21, Player 2 Score = 18, Player 3 Score = 20, Player 4 Score = 15");
         players.add(new Player(1, 100));
@@ -200,8 +200,8 @@ public class BlackjackRoundTest {
     }
     
     @Test
-    public void testDetermineRoundWinnerBoundary() {
-        System.out.println("Testing determineRoundWinnerBad");
+    public void testDetermineRoundWinnerGood() {
+        System.out.println("Testing determineRoundWinnerGood");
         ArrayList<Player> players = new ArrayList<Player>();
         System.out.println("Testing Player 1 Score = 21, Player 2 Score = 21, Player 3 Score = 21, Player 4 Score = 21");
         players.add(new Player(1, 100));
@@ -222,10 +222,10 @@ public class BlackjackRoundTest {
         int expResult = 4;
         assertEquals(expResult, result);
     }
-
+    
     @Test
-    public void testAwardPotGood() {
-        System.out.println("Testing awardPotGood");
+    public void testAwardPotBoundary() {
+        System.out.println("Testing awardPotBoundary");
         ArrayList<Player> players = new ArrayList<Player>();
         ArrayList<Player> winners = new ArrayList<Player>();
         int pot = 400;
@@ -273,8 +273,8 @@ public class BlackjackRoundTest {
     }
     
         @Test
-    public void testAwardPotBoundary() {
-        System.out.println("Testing awardPotBoundary");
+    public void testAwardPotGood() {
+        System.out.println("Testing awardPotGood");
         ArrayList<Player> players = new ArrayList<Player>();
         ArrayList<Player> winners = new ArrayList<Player>();
         int pot = 400;
